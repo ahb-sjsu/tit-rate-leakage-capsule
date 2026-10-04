@@ -6,6 +6,8 @@ This repository is a Code Ocean capsule. It runs the numerical checks described 
 "Numerical Checks" of the manuscript. No proof depends on them. They
 check identities and instances of theorems proved in the text.
 
+Code Ocean capsule: https://doi.org/10.24433/CO.4240682.v1 (provisional DOI).
+
 ## Running
 
 `code/run` runs the fourteen Python scripts in turn. Each script prints
