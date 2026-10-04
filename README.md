@@ -15,11 +15,11 @@ of exit codes, PASS and FAIL counts, and run times goes to
 Outside Code Ocean, set `RESULTS` to another directory. A clean run ends with
 `nonzero exits plus FAIL lines: 0`. All random draws are seeded.
 
-Environment: Python 3.12 with numpy 2.2.6, scipy 1.17.1, cvxpy 1.9.2 and
-sympy 1.14.0 (`environment/requirements.txt`). These are the versions
-that produced the recorded outputs. scipy 1.17 needs Python 3.11 or later.
-In Code Ocean, choose a Code Ocean Python base image and add these four
-pip packages in the environment editor.
+Environment: Code Ocean's Python 3.12.8 base image with numpy 2.2.6,
+scipy 1.17.1, cvxpy 1.9.2 and sympy 1.14.0 (`environment/Dockerfile`,
+`environment/requirements.txt`). Importing this repository into Code
+Ocean builds that environment from the Dockerfile. These are the package
+versions that produced the recorded outputs.
 
 ## Scripts and the results they check
 
