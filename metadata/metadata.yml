@@ -1,0 +1,43 @@
+metadata_version: 1
+name: 'Numerical checks for "Rate, Leakage, and Distortion for Gaussian Sources:
+  Water-Filling on a Tilted Weight"'
+description: |-
+  An encoder observes a jointly Gaussian vector and describes part of it to a
+  decoder under a weighted quadratic distortion. A second party holds a noisy
+  linear observation of the source and never decodes. The description has two
+  costs, its rate and its conditional leakage to the second party. At every
+  budget and in every geometry, each frontier point is the fixed point of
+  reverse water-filling on the decoder's weight tilted by the second party's
+  information. When the optimal description is one-dimensional, the minimum
+  leakage is a closed-form function of the largest eigenvalue of a matrix
+  pencil in which the budget enters.
+
+  This capsule reruns the numerical checks in the manuscript's appendix:
+  fourteen seeded scripts covering 66 checks. The run writes one output per
+  script and a summary table to /results. A clean run ends with "nonzero exits
+  plus FAIL lines: 0". The outputs recorded when the manuscript was written are
+  in /data/recorded for comparison.
+
+  Associated publication: A. H. Bond, "Rate, Leakage, and Distortion for
+  Gaussian Sources: Water-Filling on a Tilted Weight," submitted to IEEE
+  Transactions on Information Theory, 2026. Preprint:
+  https://doi.org/10.5281/zenodo.23127802
+
+  Source: https://github.com/ahb-sjsu/tit-rate-leakage-capsule
+tags:
+- rate-distortion
+- source coding
+- information leakage
+- secure source coding
+- Gaussian sources
+- reverse water-filling
+- side information
+- information theory
+authors:
+- name: Andrew H. Bond
+  affiliations:
+  - name: Department of Computer Engineering, San Jose State University, San Jose,
+      CA, USA
+corresponding_contributor:
+  name: Andrew H. Bond
+  email: andrew.bond@sjsu.edu
