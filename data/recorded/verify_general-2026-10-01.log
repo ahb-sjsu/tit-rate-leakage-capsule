@@ -1,0 +1,8 @@
+PASS G1 weighted pencil == optimum when rank one, >= optimum otherwise (12 cases, general H)  max |diff| rank-one 7.04e-14
+PASS G2 rate and leakage convex in Sigma_e0 (midpoint, 16000 tests)  violations 0
+PASS G2b weighted frontier minimizer unique across starts (6 cases)
+PASS G3a aligned (common eigvec) read is constant across budgets  drift 0.0e+00
+PASS G3b generic source: read moves with the budget  drift 0.084
+PASS G3c common eigvec has pencil eigenvalue (lam-Delta)(1+kap), holder touching the axis  resid 4.4e-16
+PASS G4 J Sigma b_R parallel to b_R  <=>  b_R is an eigvec of the leakage pencil (20 cases)
+FAILS: 0

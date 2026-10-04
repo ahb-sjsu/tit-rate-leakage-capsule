@@ -1,0 +1,48 @@
+PASS C1 slope formula vs central difference (2000 random points)  max rel err 1.31e-07
+PASS C2 endpoint slope at delta -> 1  max rel err 7.46e-08
+PASS C3 slope increasing on (0,1) (ell convex), 400 random (rho2,tau2)  min slope increment 4.614e-07
+C3 symbolic (ln g)'' numerator: (g*s - 1)*(4*d*g**2*s**2 - 3*d*g*s + d + 3*g*r2*s - 3*g*s**2 - r2 + s)
+C3 symbolic (ln g)'' denominator: (2*d*g*s - d + r2 - s)**3
+PASS C1 symbolic slope identity on P(g)=0  0
+PASS C4 equal-slope allocation <= brute-force grid min + 1e-7 (m=2, 200 cases)  max excess 0.00e+00
+  C5 case 1: allocation 0.332059  best joint channel 0.332059  diff -2.81e-12
+  C5 case 2: allocation 0.110255  best joint channel 0.110255  diff -1.06e-12
+  C5 case 3: allocation 0.675599  best joint channel 0.675599  diff -4.46e-12
+  C5 case 4: allocation 0.356459  best joint channel 0.356459  diff -1.69e-12
+  C5 case 5: allocation 1.228171  best joint channel 1.228171  diff -4.78e-12
+  C5 case 6: allocation 0.893865  best joint channel 0.893865  diff -4.20e-12
+  C5 case 7: allocation 0.811683  best joint channel 0.811683  diff -4.22e-12
+  C5 case 8: allocation 0.243953  best joint channel 0.243953  diff +5.26e-08
+  C5 case 9: allocation 0.139176  best joint channel 0.139176  diff -2.67e-12
+  C5 case 10: allocation 0.726335  best joint channel 0.726335  diff -4.01e-12
+  C5 case 11: allocation 0.651786  best joint channel 0.651786  diff -2.93e-12
+  C5 case 12: allocation 0.351489  best joint channel 0.351489  diff -3.62e-12
+  C5 case 13: allocation 0.618386  best joint channel 0.618386  diff -3.60e-12
+  C5 case 14: allocation 0.244419  best joint channel 0.244419  diff -1.75e-12
+  C5 case 15: allocation 1.739515  best joint channel 1.739515  diff -5.92e-12
+  C5 case 16: allocation 0.333962  best joint channel 0.333962  diff -4.48e-12
+  C5 case 17: allocation 0.288957  best joint channel 0.288957  diff -1.82e-12
+  C5 case 18: allocation 0.323741  best joint channel 0.323741  diff -1.63e-12
+  C5 case 19: allocation 0.609135  best joint channel 0.609135  diff -2.23e-12
+  C5 case 20: allocation 0.860854  best joint channel 0.860854  diff -6.18e-12
+  C5 case 21: allocation 0.385723  best joint channel 0.385723  diff -3.12e-12
+  C5 case 22: allocation 0.120494  best joint channel 0.120494  diff -1.98e-12
+  C5 case 23: allocation 0.616270  best joint channel 0.616270  diff -4.23e-12
+  C5 case 24: allocation 0.952425  best joint channel 0.952425  diff -4.51e-12
+  C5 case 25: allocation 0.155376  best joint channel 0.155377  diff +1.45e-06
+PASS C5 no correlated vector Gaussian channel beats the allocation (m=2, 25 cases)  max gain 6.18e-12
+C6 content thresholds: coord1 0.7213  coord2 0.0633  (smaller is activated first)
+C6 rate thresholds   : coord1 0.7213  coord2 1.2022
+  D=1.5: content-opt alloc (1.0000,0.5000) L=0.0077 R=0.1457 | rate-opt alloc (0.9000,0.6000) R=0.0760 L=0.0760
+  D=1.4: content-opt alloc (1.0000,0.4000) L=0.0197 R=0.3272 | rate-opt alloc (0.8000,0.6000) R=0.1610 L=0.1610
+  D=1.2: content-opt alloc (0.9998,0.2002) L=0.0866 R=0.9119 | rate-opt alloc (0.6000,0.6000) R=0.3685 L=0.3685
+  D=1.0: content-opt alloc (0.8170,0.1830) L=0.2460 R=1.1344 | rate-opt alloc (0.5000,0.5000) R=0.6315 L=0.5077
+  D=0.8: content-opt alloc (0.6362,0.1638) L=0.4456 R=1.4101 | rate-opt alloc (0.4000,0.4000) R=0.9534 L=0.6806
+FAILS: 0
+PASS C7 symbolic curvature identity (ln g)'' = N/(g Delta^3) on P(g)=0  0
+PASS C7 symbolic slope identity (ln g)' = -k/Delta on P(g)=0  0
+PASS C7 numeric curvature formula vs second difference (500 points)  max rel err 6.09e-06
+C8 content-opt describes coord 2 alone on [1.2002, 1.6); rate-opt describes coord 1 alone on [1.2, 1.6)
+C8 disjoint supports on [1.2002, 1.6)
+C8 D=1.4: content-opt L=0.0197 R=0.3272; rate-opt R=0.1610 L=0.1610; ratios 8.18, 2.03
+FAILS (final): 0

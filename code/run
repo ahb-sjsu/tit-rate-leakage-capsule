@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+# Runs every numerical check named in Appendix "Numerical Checks" of
+# "Rate, Leakage, and Distortion for Gaussian Sources: Water-Filling on a
+# Tilted Weight". Each script prints PASS/FAIL lines; its output goes to
+# ../results/<script>.txt and a summary to ../results/summary.txt.
+set -u
+cd "$(dirname "$0")"
+mkdir -p ../results
+SCRIPTS="verify_general.py verify_commuting.py verify_coupled.py verify_parallel.py
+verify_pencil.py tqp_leakage_demo.py verify_decoder_si.py verify_fixed_read.py
+verify_lowdist.py verify_tilted.py verify_scalar_path.py verify_mm.py
+verify_decsi_identities.py verify_decbounds.py"
+{
+  echo "python $(python3 -c 'import sys;print(sys.version.split()[0])')"
+  python3 -c "import numpy,scipy,cvxpy,sympy;print('numpy',numpy.__version__,'scipy',scipy.__version__,'cvxpy',cvxpy.__version__,'sympy',sympy.__version__)"
+  echo
+  printf '%-28s %6s %6s %6s %8s\n' script exit PASS FAIL seconds
+} > ../results/summary.txt
+total_fail=0
+for s in $SCRIPTS; do
+  out="../results/${s%.py}.txt"
+  t0=$(date +%s)
+  python3 -u "$s" > "$out" 2>&1
+  rc=$?
+  t1=$(date +%s)
+  # A check line starts or ends with PASS or FAIL. Each script also ends with a
+  # "FAILS: <n>" tally, which is added to the failure count.
+  np=$(grep -cE '(^[[:space:]]*PASS\b|: PASS$)' "$out")
+  nf=$(grep -cE '(^[[:space:]]*FAIL\b|: FAIL$)' "$out")
+  nt=$(grep -E '^FAILS( \(final\))?: [0-9]+' "$out" | awk -F': ' '{s += $2} END {print s + 0}')
+  nf=$((nf + nt))
+  printf '%-28s %6s %6s %6s %8s\n' "$s" "$rc" "$np" "$nf" "$((t1 - t0))" >> ../results/summary.txt
+  if [ "$rc" -ne 0 ]; then total_fail=$((total_fail + 1)); fi
+  total_fail=$((total_fail + nf))
+done
+echo >> ../results/summary.txt
+echo "nonzero exits plus FAIL lines: $total_fail" >> ../results/summary.txt
+cat ../results/summary.txt
