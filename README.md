@@ -9,9 +9,10 @@ check identities and instances of theorems proved in the text.
 ## Running
 
 `code/run` runs the fourteen Python scripts in turn. Each script prints
-PASS or FAIL lines. Its output goes to `results/<script>.txt`, and a table
+PASS or FAIL lines. Its output goes to `/results/<script>.txt`, and a table
 of exit codes, PASS and FAIL counts, and run times goes to
-`results/summary.txt`. A clean run ends with
+`/results/summary.txt`. Code Ocean keeps only files written to `/results`.
+Outside Code Ocean, set `RESULTS` to another directory. A clean run ends with
 `nonzero exits plus FAIL lines: 0`. All random draws are seeded.
 
 Environment: Python 3.12 with numpy 2.2.6, scipy 1.17.1, cvxpy 1.9.2 and
